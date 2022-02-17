@@ -46,3 +46,4 @@ msbuild.wrn
 .vs/
 app.db-shm
 app.db-wal
+app.db
