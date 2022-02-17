@@ -6,7 +6,8 @@ This is the new website to read manga online !
 
 > This project has been created during my ASP courses. It also called the `Mangathèque`.
 
-## Get Started
+## Dev
+### Get Started
 
 Run the following command : 
 
@@ -15,6 +16,24 @@ dotnet run
 ```
 
 'nd Have fun !
+
+### dotnet commands
+
+#### Generate a new migrations
+
+```
+dotnet ef migrations add [name]
+```
+#### Update schema with new migrations
+
+```
+dotnet ef database update
+```
+#### Delete schema
+
+```
+dotnet ef database drop
+```
 
 ## URL
 
