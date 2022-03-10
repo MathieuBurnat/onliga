@@ -118,13 +118,11 @@ namespace onliga.Areas.Identity.Pages.Account
             {
                 
                 
-                //var user = CreateUser();
+                var user = CreateUser();
 
-                var user = new User {
-                    Email = Input.Email,
-                    UserName = Input.Email, 
-                    Pseudo = Input.Email,
-                };
+                user.Email = Input.Email;
+                user.UserName = Input.Email;
+                //user.Pseudo = Input.Email;
 
 
                 /*var user = CreateUser();
@@ -173,7 +171,7 @@ namespace onliga.Areas.Identity.Pages.Account
         {
             try
             {
-                return Activator.CreateInstance<User>();
+                return Activator.CreateInstance<IdentityUser>();
             }
             catch
             {
