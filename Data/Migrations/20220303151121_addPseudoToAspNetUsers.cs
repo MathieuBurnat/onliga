@@ -11,7 +11,7 @@ namespace onliga.Data.Migrations
             migrationBuilder.AddColumn<string>(
             name: "Pseudo",
             table: "AspNetUsers",
-            nullable: false,
+            nullable: true,
             maxLength: 20);
         }
         protected override void Down(MigrationBuilder migrationBuilder)
