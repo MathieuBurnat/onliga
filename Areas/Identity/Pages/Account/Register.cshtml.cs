@@ -19,6 +19,8 @@ using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.AspNetCore.WebUtilities;
 using Microsoft.Extensions.Logging;
 
+using onliga.Models;
+
 namespace onliga.Areas.Identity.Pages.Account
 {
     public class RegisterModel : PageModel
