@@ -4,13 +4,13 @@
 
 namespace onliga.Data.Migrations
 {
-    public partial class addPseudoToAspNetUsers : Migration
+    public partial class addPseudoToUsers : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.AddColumn<string>(
             name: "Pseudo",
-            table: "AspNetUsers",
+            table: "Users",
             nullable: true,
             maxLength: 20);
         }

@@ -11,8 +11,8 @@ using onliga.Data;
 namespace onliga.Data.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20220303151121_addPseudoToAspNetUsers")]
-    partial class addPseudoToAspNetUsers
+    [Migration("20220303151121_addPseudoToUsers")]
+    partial class addPseudoToUsers
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -129,7 +129,7 @@ namespace onliga.Data.Migrations
                         .IsUnique()
                         .HasDatabaseName("UserNameIndex");
 
-                    b.ToTable("AspNetUsers", (string)null);
+                    b.ToTable("Users", (string)null);
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityUserClaim<string>", b =>
