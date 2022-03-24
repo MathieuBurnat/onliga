@@ -11,7 +11,6 @@ namespace onliga.Data.Migrations
             migrationBuilder.AddColumn<string>(
             name: "Pseudo",
             table: "Users",
-            nullable: true,
             maxLength: 20);
         }
         protected override void Down(MigrationBuilder migrationBuilder)
