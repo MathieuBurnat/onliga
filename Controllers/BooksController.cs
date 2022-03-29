@@ -3,14 +3,20 @@ using System.Text.Encodings.Web;
 
 namespace onliga.Controllers
 {
-    public class BookController : Controller
+    public class BooksController : Controller
     {
         // 
         // GET: /book/
-
-        public string Index()
+        public IActionResult Index()
         {
-            return "This is my default action...";
+            return View();
+        }
+
+        // 
+        // GET: /book/
+        public IActionResult New()
+        {
+            return View();
         }
 
         // 
