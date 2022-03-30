@@ -11,4 +11,7 @@ public class ApplicationDbContext : IdentityDbContext
         : base(options)
     {
     }
+
+    public DbSet<onliga.Models.Book> Books { get; set; }
+
 }
