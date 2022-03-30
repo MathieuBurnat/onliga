@@ -5,12 +5,12 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace onliga.Migrations
 {
-    public partial class InitialCreate : Migration
+    public partial class CreateBook : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.CreateTable(
-                name: "Manga",
+                name: "Book",
                 columns: table => new
                 {
                     Id = table.Column<int>(type: "int", nullable: false)
@@ -21,14 +21,14 @@ namespace onliga.Migrations
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_Manga", x => x.Id);
+                    table.PrimaryKey("PK_Book", x => x.Id);
                 });
         }
 
         protected override void Down(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.DropTable(
-                name: "Manga");
+                name: "Book");
         }
     }
 }
