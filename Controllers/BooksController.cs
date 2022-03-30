@@ -1,6 +1,9 @@
 using Microsoft.AspNetCore.Mvc;
 using System.Text.Encodings.Web;
+using System.Collections.Generic;
+using System.Linq;
 using onliga.Data;
+using onliga.Models;
 using Microsoft.EntityFrameworkCore;
 namespace onliga.Controllers
 {
@@ -13,6 +16,30 @@ namespace onliga.Controllers
         public BooksController(ApplicationDbContext context)
         {
             _context = context;
+        }
+
+        // GET: Books/Create
+        public IActionResult Create()
+        {
+            return View();
+        }
+
+        // POST: Books/Create
+        // To protect from overposting attacks, enable the specific properties you want to bind to.
+        // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> Create([Bind("Title,ReleaseDate,Genre")] Book Book)
+        {
+            System.Console.WriteLine("Hello World!");
+
+            if (ModelState.IsValid)
+            {
+                _context.Add(Book);
+                await _context.SaveChangesAsync();
+                return RedirectToAction(nameof(Index));
+            }
+            return View(Book);
         }
 
         // GET: books/Details/5
