@@ -1,15 +1,17 @@
 using Microsoft.AspNetCore.Mvc;
 using System.Text.Encodings.Web;
-
+using onliga.Data;
+using Microsoft.EntityFrameworkCore;
 namespace onliga.Controllers
 {
     public class BooksController : Controller
     {
         // 
         // GET: /book/
-        public IActionResult Index()
+        // GET: Books
+        public async Task<IActionResult> Index()
         {
-            return View();
+            return View(await _context.Books.ToListAsync());
         }
 
         // 
