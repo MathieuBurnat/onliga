@@ -6,6 +6,33 @@ namespace onliga.Controllers
 {
     public class BooksController : Controller
     {
+
+
+        private readonly ApplicationDbContext _context;
+
+        public BooksController(ApplicationDbContext context)
+        {
+            _context = context;
+        }
+
+        // GET: books/Details/5
+        public async Task<IActionResult> Details(int? id)
+        {
+            if (id == null)
+            {
+                return NotFound();
+            }
+
+            var book = await _context.Books
+                .FirstOrDefaultAsync(m => m.Id == id);
+
+            if (book == null)
+            {
+                return NotFound();
+            }
+
+            return View(book);
+        }
         // 
         // GET: /book/
         // GET: Books
