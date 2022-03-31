@@ -112,6 +112,35 @@ namespace onliga.Controllers
             return View(book);
         }
 
+        // GET: Books/Delete/5
+        public async Task<IActionResult> Delete(int? id)
+        {
+            if (id == null)
+            {
+                return NotFound();
+            }
+
+            var Book = await _context.Books
+                .FirstOrDefaultAsync(m => m.Id == id);
+            if (Book == null)
+            {
+                return NotFound();
+            }
+
+            return View(Book);
+        }
+
+        // POST: Books/Delete/5
+        [HttpPost, ActionName("Delete")]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> DeleteConfirmed(int id)
+        {
+            var Book = await _context.Books.FindAsync(id);
+            _context.Books.Remove(Book);
+            await _context.SaveChangesAsync();
+            return RedirectToAction(nameof(Index));
+        }
+
         // 
         // GET: /book/
         public IActionResult New()
