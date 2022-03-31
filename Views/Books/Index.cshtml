@@ -1,3 +1,5 @@
+@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+
 @model IEnumerable<onliga.Models.Book>
 
 @{
@@ -36,9 +38,9 @@
                     @Html.DisplayFor(modelItem => item.Genre)
                 </td>
                 <td>
-                    <a asp-controller="Books" asp-action="Create">Create a Manga</a> |
-                    <a asp-controller="Books" asp-action="Edit">Edit</a> |
-                    <a asp-controller="Books" asp-action="Details">Detail</a>
+                    <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
+                    <a asp-action="Details" asp-route-id="@item.Id">Details</a> |
+                    <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
                 </td>
             </tr>
         }
