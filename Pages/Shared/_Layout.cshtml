@@ -42,7 +42,8 @@
 
     <div class="container">
         <div id="teest"></div>
-        <div id="statusAction" style="display: none">@ViewData["typeAction"]</div>
+        <div id="queryResponseType" style="display: none">@ViewData["queryType"]</div>
+        <div id="queryResponseMessage" style="display: none">@ViewData["queryMessage"]</div>
 
         @RenderSection("flash", required: false)
 
@@ -81,10 +82,10 @@
 
     function getInfo() {
         $(document).ready(function () {
-            if ($('#statusAction').text() == "true") {
-                FlashMessage("Works great", "success");
-            } else if($('#statusAction').text() == "false") {
-                FlashMessage("nothing", "warning");
+            if ($('#queryResponseType').text() == "true") {
+                FlashMessage($('#queryResponseMessage').text(), "success");
+            } else if($('#queryResponseType').text() == "false") {
+                FlashMessage($('#queryResponseMessage').text(), "warning");
             }
         });
     }

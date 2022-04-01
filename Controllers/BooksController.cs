@@ -166,7 +166,8 @@ namespace onliga.Controllers
         [HttpPost, ActionName("test")]
         public ActionResult Test()
         {
-            @ViewData["typeAction"] = "true";
+            @ViewData["queryType"] = "true";
+            @ViewData["queryMessage"] = "My message";
             return View();
         }
     }

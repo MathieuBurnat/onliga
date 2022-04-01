@@ -38,3 +38,9 @@ dotnet ef database drop
 ## URL
 
 The website is available [here](https://onligami.azurewebsites.net) ! :heart:
+
+## Flashmessage 
+It's possible to use flash message.
+Simply add these tags :
+@ViewData["queryType"] = "true"; //true, success. False, warning
+@ViewData["queryMessage"] = "My message"; //my content
