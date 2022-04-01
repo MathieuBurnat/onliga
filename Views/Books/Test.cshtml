@@ -5,7 +5,6 @@
 }
 
 <div>
-    <div id="getme">@ViewData["pro"]</div>
 
     <table class="table table-bordered table-condensed">
         <tr>
@@ -37,15 +36,7 @@
 @section flash {
 <script type="text/javascript">
         $(document).ready(function () {
-            if ($('#getme').text() == "works") {
-                FlashMessage("Works great", "success");
-            } else {
-                FlashMessage("nothing", "warning");
-            }
-
-            $('table a').click(function () {
-                FlashMessage("Hey ! U clicked on me !", "warning");
-            });
+            getInfo();
         });
 </script>
 }
