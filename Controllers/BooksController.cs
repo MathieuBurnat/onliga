@@ -31,12 +31,14 @@ namespace onliga.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Create([Bind("Title,ReleaseDate,Genre")] Book Book)
         {
-            System.Console.WriteLine("Hello World!");
-
             if (ModelState.IsValid)
             {
                 _context.Add(Book);
                 await _context.SaveChangesAsync();
+
+                @TempData["queryType"] = "true";
+                @TempData["queryMessage"] = Book.Title +" has been created 👌";
+                
                 return RedirectToAction(nameof(Index));
             }
             return View(Book);
@@ -102,6 +104,9 @@ namespace onliga.Controllers
                 {
                     _context.Update(book);
                     await _context.SaveChangesAsync();
+
+                    @TempData["queryType"] = "true";
+                    @TempData["queryMessage"] = book.Title +" has been edited 👌";
                 }
                 catch (DbUpdateConcurrencyException)
                 {
@@ -138,6 +143,10 @@ namespace onliga.Controllers
             var Book = await _context.Books.FindAsync(id);
             _context.Books.Remove(Book);
             await _context.SaveChangesAsync();
+            
+            @TempData["queryType"] = "false";
+            @TempData["queryMessage"] = Book.Title +" has been deleted 💀";
+
             return RedirectToAction(nameof(Index));
         }
 

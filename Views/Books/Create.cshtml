@@ -44,3 +44,11 @@
 @section Scripts {
 @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
 }
+
+@section flash {
+<script type="text/javascript">
+    $(document).ready(function () {
+        getInfo();
+    });
+</script>
+}

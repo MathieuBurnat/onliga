@@ -42,8 +42,8 @@
 
     <div class="container">
         <div id="teest"></div>
-        <div id="queryResponseType" style="display: none">@ViewData["queryType"]</div>
-        <div id="queryResponseMessage" style="display: none">@ViewData["queryMessage"]</div>
+        <div id="queryResponseType" style="display: none">@TempData["queryType"]</div>
+        <div id="queryResponseMessage" style="display: none">@TempData["queryMessage"]</div>
 
         @RenderSection("flash", required: false)
 
