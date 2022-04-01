@@ -4,21 +4,32 @@
     Layout = "../../Pages/Shared/_Layout";
 }
 
-<h2>Welcome</h2>
+<div>
+    <table class="table table-bordered table-condensed">
+        <tr>
+            <th>Name</th>
+            <th>Department</th>
+            <th>Action</th>
+        </tr>
+        <tr>
+            <td>
+                <a href="#">@String.Format("{0} {1}", "Mathieu", "Burnat")</a>
+            </td>
+            <td>
+                IT
+            </td>
+            <td>@Html.ActionLink("Edit", "edit", new { id = 1 })</td>
+        </tr>
+    </table>
+</div>
 
-<h4 onclick="test()"> Click me ! </h4>
-
-<ul>
-    @for (int i = 0; i < (int)ViewData["NumTimes"]!; i++)
-    {
-        <li>@ViewData["Message"]</li>
-    }
-</ul>
-
-<script>
-    //function return datetime.now
-
-    function test(){
-        console.log("Hey");
-    } 
+@section flash {
+<script type="text/javascript">
+    $(document).ready(function(){
+        $('table a').click(function () {
+            alert("hey");
+            AlertName("poney");
+        });
+    });
 </script>
+}
