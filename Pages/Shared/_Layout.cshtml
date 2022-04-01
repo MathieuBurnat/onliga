@@ -38,9 +38,12 @@
             </div>
         </nav>
     </header>
+    
+    <div id="teest"></div>
+
     <div class="container">
         @RenderSection("flash", required: false)
-        
+
         <main role="main" class="pb-3">
             @RenderBody()
         </main>
@@ -61,10 +64,28 @@
 
 </html>
 
-@section flash {
 <script type="text/javascript">
-    function AlertName(name) {
-        alert('You clicked ' + name + "!");
+    function FlashMessage(content) {
+        //alert('You clicked ' + content + "!");
+
+        /*
+        $(".alert").fadeOut(1000, function(){
+            this.remove();
+        });*/
+
+        /*
+        jQuery('<div>', {
+            id: 'test',
+            class: 'alert alert-success alert-block',
+        }).appendTo('#teest');
+        */
+
+        message = "This is a test"
+        $( "<div id = 'test' class = 'alert alert-success alert-block'> " + message + "</div>" ).appendTo( "#teest" )
+
+        $(".alert").fadeOut(1000, function(){
+            this.remove();
+        });
     }
+
 </script>
-}
