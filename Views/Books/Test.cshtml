@@ -21,6 +21,7 @@
             <td>@Html.ActionLink("Edit", "edit", new { id = 1 })</td>
         </tr>
     </table>
+
     <form asp-action="test">
         <input type="submit" value="test" class="btn btn-danger" />
     </form>
@@ -28,14 +29,15 @@
     <script type="text/javascript" defer="defer">
         @Html.Raw(ViewBag.StartupScript)
     </script>
+
 </div>
 
 @section flash {
-<script type="text/javascript">
-    $(document).ready(function(){
-        $('table a').click(function () {
-            FlashMessage("Hellow There", "success");
+    <script type="text/javascript">
+        $(document).ready(function(){
+            $('table a').click(function () {
+                FlashMessage("Hellow There", "success");
+            });
         });
-    });
-</script>
+    </script>
 }

@@ -166,12 +166,7 @@ namespace onliga.Controllers
         [HttpPost, ActionName("test")]
         public ActionResult Test()
         {
-            System.Diagnostics.Debug.WriteLine("test");
-
-            //ViewData["JavaScriptFunction"] = "<script>FlashMessage('test', 'success');</script>";
-            //ViewData["JavaScriptFunction"] = "<div id = 'test' class = 'alert alert-success alert-block'> Hello there </div>";
-            ViewBag.StartupScript = "alert('hello world!');";
-
+            ViewBag.StartupScript = "FlashMessage('hello world!', 'success');";
             return View();
         }
     }
