@@ -5,6 +5,8 @@
 }
 
 <div>
+    <div id="getme">@ViewData["pro"]</div>
+
     <table class="table table-bordered table-condensed">
         <tr>
             <th>Name</th>
@@ -36,7 +38,11 @@
     <script type="text/javascript">
         $(document).ready(function(){
             $('table a').click(function () {
-                FlashMessage("Hellow There", "success");
+                if($('#getme').text() == "works"){
+                    FlashMessage("Hellow There", "success");
+                }else{
+                    FlashMessage("meh", "warning");
+                }
             });
         });
     </script>

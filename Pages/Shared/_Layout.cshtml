@@ -65,18 +65,16 @@
 
 </html>
 
-@section flash {
-    <script type="text/javascript">
-        function FlashMessage(message, type) {
-            // Up the message
-            $( "<div id = 'test' class = 'alert alert-" + type + " alert-block'> " + message + "</div>" ).appendTo( "#teest" )
+<script type="text/javascript">
+    function FlashMessage(message, type) {
+        // Up the message
+        $( "<div id = 'test' class = 'alert alert-" + type + " alert-block'> " + message + "</div>" ).appendTo( "#teest" )
 
-            // Down the message
-            setTimeout(function() {
-                $(".alert").fadeOut(1000, function(){
-                    this.remove();
-                });
-            }, 3000);
-        }
-    </script>
-}
+        // Down the message
+        setTimeout(function() {
+            $(".alert").fadeOut(1000, function(){
+                this.remove();
+            });
+        }, 3000);
+    }
+</script>

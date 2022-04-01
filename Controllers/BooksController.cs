@@ -166,7 +166,8 @@ namespace onliga.Controllers
         [HttpPost, ActionName("test")]
         public ActionResult Test()
         {
-            ViewBag.StartupScript = "FlashMessage('hello world!', 'success');";
+            @ViewData["pro"] = "works";
+            //ViewBag.StartupScript = "FlashMessage('hello world!', 'success');";
             return View();
         }
     }
