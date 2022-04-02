@@ -1,4 +1,9 @@
-﻿<!DOCTYPE html>
+﻿@using Microsoft.AspNetCore.Identity
+@using onliga.Models
+@inject SignInManager<User> SignInManager
+@inject UserManager<User> UserManager
+    
+<!DOCTYPE html>
 <html lang="en">
 
 <head>
@@ -27,7 +32,9 @@
                             <a class="nav-link text-dark" asp-area="" asp-controller="" asp-action="">Home</a>
                         </li>
                         <li>
-                            <a class="nav-link text-dark" asp-controller="books" asp-action="Create">Create a Manga</a>
+                            @if (SignInManager.IsSignedIn(User)){
+                                <a class="nav-link text-dark" asp-controller="books" asp-action="Create">Create a Manga</a>
+                            }
                         </li>
                         <li class="nav-item">
                             <a class="nav-link text-dark" asp-area="" asp-page="/Privacy">Privacy</a>
