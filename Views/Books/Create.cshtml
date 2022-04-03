@@ -20,6 +20,13 @@
                 <input asp-for="Title" class="form-control" />
                 <span asp-validation-for="Title" class="text-danger"></span>
             </div>
+
+            <div class="form-group">
+                <label asp-for="Description" class="control-label"></label>
+                <textarea cols="20" rows="2" asp-for="Description" class="form-control"></textarea>
+                <span asp-validation-for="Description" class="text-danger"></span>
+            </div>
+            
             <div class="form-group">
                 <label asp-for="ReleaseDate" class="control-label"></label>
                 <input asp-for="ReleaseDate" class="form-control" />
@@ -28,9 +35,12 @@
             <div class="form-group">
                 <label asp-for="Genre" class="control-select"></label>
                 <select class="form-select" asp-for="Genre" aria-label="Genre">
-                    <option value="Romantic Comedy">Romantic Comedy</option>
-                    <option value="Comedy">Comedy</option>
                     <option selected value="Action">Action</option>
+                    <option value="Comedy">Comedy</option>
+                    <option value="Comedy">Shonen</option>
+                    <option value="Comedy">Shojo</option>
+                    <option value="Romantic Comedy">Romantic Comedy</option>
+                    <option value="Comedy">Seinen</option>
                 </select>
                 <span asp-validation-for="Genre" class="text-danger"></span>
             </div>

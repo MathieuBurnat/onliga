@@ -15,6 +15,7 @@ namespace onliga.Data.Migrations
                                Id = table.Column<int>(type: "INTEGER", nullable: false)
                                    .Annotation("Sqlite:Autoincrement", true),
                                Title = table.Column<string>(type: "TEXT", nullable: true),
+                               Description = table.Column<string>(type: "TEXT", nullable: true),
                                ReleaseDate = table.Column<DateTime>(type: "TEXT", nullable: false),
                                Genre = table.Column<string>(type: "TEXT", nullable: true)
                            },

@@ -29,7 +29,7 @@ namespace onliga.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("Title,ReleaseDate,Genre")] Book Book)
+        public async Task<IActionResult> Create([Bind("Title,Description, ReleaseDate,Genre")] Book Book)
         {
             if (ModelState.IsValid)
             {
@@ -91,7 +91,7 @@ namespace onliga.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("Id,Title,ReleaseDate,Genre")] Book book)
+        public async Task<IActionResult> Edit(int id, [Bind("Id,Title,Description, ReleaseDate,Genre")] Book book)
         {
             if (id != book.Id)
             {
