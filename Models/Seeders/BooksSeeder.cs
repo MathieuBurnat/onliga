@@ -32,8 +32,8 @@ namespace onliga.Seeders
 
                     new Book
                     {
-                        Title = "Good night punpun",
-                        Description = "",
+                        Title = "Good night Switzerla",
+                        Description = "A very famous one",
                         ReleaseDate = DateTime.Parse("2003-3-13"),
                         Genre = "Comedy",
                     },
