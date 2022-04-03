@@ -2,7 +2,7 @@
 @using onliga.Models
 @inject SignInManager<User> SignInManager
 @inject UserManager<User> UserManager
-    
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -21,6 +21,10 @@
     <header>
         <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
             <div class="container">
+                <a class="navbar-brand" href="#">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/50/Closed_Book_Icon.svg/2048px-Closed_Book_Icon.svg.png"
+                        width="30" height="30" class="d-inline-block align-top" alt="">
+                </a>
                 <a class="navbar-brand" asp-area="" asp-controller="books" asp-action="Index">Manga</a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target=".navbar-collapse"
                     aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -32,7 +36,8 @@
                             <a class="nav-link text-dark" asp-area="" asp-controller="" asp-action="">Home</a>
                         </li>
                         <li>
-                            @if (SignInManager.IsSignedIn(User)){
+                            @if (SignInManager.IsSignedIn(User))
+                            {
                                 <a class="nav-link text-dark" asp-controller="books" asp-action="Create">Create a Manga</a>
                             }
                         </li>
@@ -91,7 +96,7 @@
         $(document).ready(function () {
             if ($('#queryResponseType').text() == "true") {
                 FlashMessage($('#queryResponseMessage').text(), "success");
-            } else if($('#queryResponseType').text() == "false") {
+            } else if ($('#queryResponseType').text() == "false") {
                 FlashMessage($('#queryResponseMessage').text(), "warning");
             }
         });
