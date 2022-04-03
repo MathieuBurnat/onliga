@@ -1,0 +1,55 @@
+@using Microsoft.AspNetCore.Identity
+@using onliga.Models
+@inject SignInManager<User> SignInManager
+@inject UserManager<User> UserManager
+
+@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+@{
+    ViewData["Title"] = "Welcome";
+    Layout = "../../Pages/Shared/_Layout";
+}
+
+<div>
+    <!-- If the user is connected -->
+    @if (SignInManager.IsSignedIn(User))
+    {
+        <p>Hello @User.Identity.Name</p>
+    }else
+    {
+        <p>You are not connected</p>
+    }
+
+    <table class="table table-bordered table-condensed">
+        <tr>
+            <th>Name</th>
+            <th>Department</th>
+            <th>Action</th>
+        </tr>
+        <tr>
+            <td>
+                <a href="#">@String.Format("{0} {1}", "Mathieu", "Burnat")</a>
+            </td>
+            <td>
+                IT
+            </td>
+            <td>@Html.ActionLink("Edit", "edit", new { id = 1 })</td>
+        </tr>
+    </table>
+
+    <form asp-action="test">
+        <input type="submit" value="test" class="btn btn-danger" />
+    </form>
+
+    <script type="text/javascript" defer="defer">
+        @Html.Raw(ViewBag.StartupScript)
+    </script>
+
+</div>
+
+@section flash {
+<script type="text/javascript">
+        $(document).ready(function () {
+            getInfo();
+        });
+</script>
+}

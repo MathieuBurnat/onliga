@@ -1,11 +1,31 @@
 ﻿@page
+@using Microsoft.AspNetCore.Identity
+@using onliga.Models
+@inject SignInManager<User> SignInManager
+@inject UserManager<User> UserManager
 @model IndexModel
 @{
     ViewData["Title"] = "Home page";
 }
 
-<div class="text-center">
-    <h1 class="display-4">Adieu cte' ste-croix !</h1>
-    <h2> I hope you feel good 🧐</h2>
-    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+<div class="text-center center">
+    <div class="card center" style="width: 60%; display: block; margin-left: auto; margin-right: auto;">
+        <img class="card-img-top" src="https://www.rts.ch/2021/09/01/12/03/12459012.image?w=1280&h=720"
+            alt="Card image cap">
+        <div class="card-body">
+            <h5 class="card-title">Bienvenue chez Onliga 📚</h5>
+            <p class="card-text">Onliga est une mangathèque en ligne qui vous permettra d'accéder à tous vos mangas
+                préférés en ligne</p>
+            @if (SignInManager.IsSignedIn(User))
+            {
+                <a class="btn btn-primary" asp-controller="books" asp-action="Index">I want to read my favorite manga 😁</a>
+            }
+        </div>
+        @if (!SignInManager.IsSignedIn(User))
+        {
+            <div class="card-body text-primary" style="font-style: italic;">
+                Vous avez besoin d'être connecté pour accéder à la lecture d'un manga.
+            </div>
+        }
+    </div>
 </div>

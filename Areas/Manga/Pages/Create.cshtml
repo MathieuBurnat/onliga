@@ -1,0 +1,17 @@
+@page
+
+@namespace onliga.Manga
+
+@{
+    var data = "New Book";
+}
+
+<div>
+    @if (!string.IsNullOrEmpty(data))
+    {
+        <p> @data!</p>
+    }else
+    {
+        <p> Is there someone ? </p>
+    }
+</div>
