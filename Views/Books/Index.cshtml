@@ -44,7 +44,7 @@
                     @Html.DisplayFor(modelItem => item.Genre)
                 </td>
                 <td style="display: inline-flex">
-                    <a class="btn btn-primary m-1" asp-action="Edit" asp-route-id="@item.Id">
+                    <a class="btn btn-primary m-1" asp-action="Details" asp-route-id="@item.Id">
                         <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
                         class="bi bi-eye-fill" viewBox="0 0 16 16">
                             <path d="M10.5 8a2.5 2.5 0 1 1-5 0 2.5 2.5 0 0 1 5 0z" />
@@ -63,7 +63,7 @@
                             </path>
                         </svg>
                     </a>
-                    <a class="btn btn-danger m-1" asp-action="Edit" asp-route-id="@item.Id">
+                    <a class="btn btn-danger m-1" asp-action="Delete" asp-route-id="@item.Id">
                         <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
                         class="bi bi-trash" viewBox="0 0 16 16">
                             <path
