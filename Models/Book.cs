@@ -11,6 +11,7 @@ namespace onliga.Models
         [RegularExpression(@"^[a-zA-Z\s]*$"), Required, StringLength(30, MinimumLength = 3)]
         public string Title { get; set; }
 
+        [Required, StringLength(1020, MinimumLength = 5)]
         public string Description { get; set; }
 
         [Display(Name = "Release Date"), DataType(DataType.Date)]
